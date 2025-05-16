@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitLife | Login</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="hero" style="background-image: url('images/login.jpg');">
+  <div class="hero-overlay">
+    <nav class="navbar">
+      <div class="logo">FitLife</div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i><span>About</span></a></li>
+        <li><a href="services.html"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+        <li><a href="trainers.html"><i class="fas fa-users"></i><span>Trainers</span></a></li>
+        <li><a href="testimonials.html"><i class="fas fa-comments"></i><span>Testimonials</span></a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+        <li><a href="login.html"><i class="fas fa-sign-in-alt"></i><span>Login</span></a></li>
+      </ul>
+    </nav>
+      <div class="hero-content">
+        <h1>Welcome Back</h1>
+        <p>Log in to your FitLife account</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section fade-in">
+      <div class="container auth-form">
+        <form id="loginForm">
+          <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <select id="goal">
+            <option value="lose_weight">Lose Weight</option>
+            <option value="build_muscle">Build Muscle</option>
+            <option value="stay_fit">Stay Fit</option>
+          </select>
+          <button type="submit" class="btn primary-btn">Log In</button>
+          <p class="form-status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer dark">
+    <div class="container">
+      <p>&copy; 2025 FitLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const user = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        goal: document.getElementById("goal").value
+      };
+
+      localStorage.setItem("fitlife_user", JSON.stringify(user));
+      document.querySelector(".form-status").textContent = "Login successful! Redirecting...";
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>

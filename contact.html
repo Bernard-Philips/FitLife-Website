@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitLife | Contact</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="hero" style="background-image: url('images/contact.jpg');">
+  <div class="hero-overlay">
+    <nav class="navbar">
+      <div class="logo">FitLife</div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i><span>About</span></a></li>
+        <li><a href="services.html"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+        <li><a href="trainers.html"><i class="fas fa-users"></i><span>Trainers</span></a></li>
+        <li><a href="testimonials.html"><i class="fas fa-comments"></i><span>Testimonials</span></a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+        <li><a href="login.html"><i class="fas fa-sign-in-alt"></i><span>Login</span></a></li>
+      </ul>
+    </nav>
+      </nav>
+      <div class="hero-content">
+        <h1>Contact Us</h1>
+        <p>Let’s get in touch – we’d love to hear from you</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+<section class="section fade-in">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Wellness Road, Sandton, Johannesburg, 2196, South Africa</p>
+      <p><i class="fas fa-envelope"></i> contact@fitlife.co.za</p>
+      <p><i class="fas fa-phone"></i> +27 11 123 4567</p>
+      <p><i class="fas fa-clock"></i> Mon - Fri: 6am – 9pm</p>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114745.82732457166!2d28.00378675!3d-26.1073667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950cbd3b1a3e5b%3A0x3a4f507d6f89694f!2sSandton%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1715793700000!5m2!1sen!2sza"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" name="name" required />
+        <input type="email" placeholder="Your Email" name="email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn primary-btn">Send Message</button>
+      </form>
+      <p class="form-status"></p>
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer dark">
+    <div class="container">
+      <p>&copy; 2025 FitLife. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const status = document.querySelector(".form-status");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      status.textContent = "Thank you! We'll get back to you soon.";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

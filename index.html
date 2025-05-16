@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitLife | Elevate Your Fitness</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+<header class="hero" style="background-image: url('images/gym.jpg');">
+  <div class="hero-overlay">
+    <nav class="navbar">
+      <div class="logo">FitLife</div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i><span>About</span></a></li>
+        <li><a href="services.html"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+        <li><a href="trainers.html"><i class="fas fa-users"></i><span>Trainers</span></a></li>
+        <li><a href="testimonials.html"><i class="fas fa-comments"></i><span>Testimonials</span></a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+        <li><a href="login.html"><i class="fas fa-sign-in-alt"></i><span>Login</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Transform Your Life with FitLife</h1>
+      <p>Fitness isn't a destination, it's a way of life</p>
+      <a href="login.html" class="btn primary-btn">Join Now</a>
+    </div>
+  </div>
+</header>
+
+
+  <main>
+    <section id="about" class="section fade-in">
+      <div class="container">
+        <h2>About FitLife</h2>
+        <p>FitLife is a high-end fitness company dedicated to improving lives through personalized training, nutrition, and wellness programs. We bring elite-level coaching to everyone, everywhere.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section dark fade-in">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="cards">
+          <div class="card">
+            <i class="fas fa-dumbbell fa-3x"></i>
+            <h3>Personal Training</h3>
+            <p>Customized 1-on-1 training sessions tailored to your goals and lifestyle.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-apple-alt fa-3x"></i>
+            <h3>Nutrition Planning</h3>
+            <p>Science-backed nutrition plans to fuel your body the right way.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-heartbeat fa-3x"></i>
+            <h3>Wellness Coaching</h3>
+            <p>Holistic guidance covering mental and physical well-being.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trainers" class="section fade-in">
+      <div class="container">
+        <h2>Meet Our Trainers</h2>
+        <div class="trainers-grid">
+          <div class="trainer">
+            <img src="images/trainer3.jpg" alt="Trainer 1">
+            <h4>Alex Storm</h4>
+            <p>Strength & Conditioning</p>
+          </div>
+          <div class="trainer">
+            <img src="images/trainer1.jpg" alt="Trainer 2">
+            <h4>Lena Rivers</h4>
+            <p>Yoga & Flexibility</p>
+          </div>
+          <div class="trainer">
+            <img src="images/trainer2.jpg" alt="Trainer 3">
+            <h4>Mike Blaze</h4>
+            <p>HIIT Specialist</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section dark fade-in">
+      <div class="container">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials">
+          <blockquote>
+            "FitLife changed my life. I'm stronger, happier, and healthier."
+            <footer>— Jamie L.</footer>
+          </blockquote>
+          <blockquote>
+            "The trainers are top-notch and the programs really work."
+            <footer>— Chris D.</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup" class="section fade-in">
+      <div class="container">
+        <h2>Start Your FitLife Today</h2>
+        <form id="signupForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <select name="goal">
+            <option value="lose_weight">Lose Weight</option>
+            <option value="build_muscle">Build Muscle</option>
+            <option value="stay_fit">Stay Fit</option>
+          </select>
+          <button type="submit" class="btn primary-btn">Sign Up</button>
+        </form>
+        <p class="form-status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer dark">
+    <div class="container">
+      <p>&copy; 2025 FitLife. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+

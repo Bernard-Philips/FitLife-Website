@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitLife | Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="hero" style="background-image: url('images/dash.jpg');">
+  <div class="hero-overlay">
+      <nav class="navbar">
+        <div class="logo">FitLife</div>
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+          <li><a href="dashboard.html" class="active"><i class="fas fa-chart-line"></i><span>Dashboard</span></a></li>
+          <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+        </ul>
+      </nav>
+      <div class="hero-content">
+        <h1>Welcome, <span id="userName">User</span></h1>
+        <p>Track your goals and progress</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section fade-in">
+      <div class="container">
+        <div class="dashboard-cards">
+          <div class="card">
+            <h3>Your Goal</h3>
+            <p id="userGoal">Loading...</p>
+          </div>
+          <div class="card">
+            <h3>This Week</h3>
+            <p>Workouts: <strong>4</strong></p>
+            <p>Meals Logged: <strong>10</strong></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Activity Chart</h3>
+          <canvas id="progressChart" width="400" height="200"></canvas>
+        </div>
+
+        <div class="card">
+          <h3>Update Your Info</h3>
+          <form id="profileForm">
+            <input type="text" id="editName" placeholder="Your Name" />
+            <input type="email" id="editEmail" placeholder="Your Email" />
+            <select id="editGoal">
+              <option value="lose_weight">Lose Weight</option>
+              <option value="build_muscle">Build Muscle</option>
+              <option value="stay_fit">Stay Fit</option>
+            </select>
+            <button type="submit" class="btn primary-btn">Save</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer dark">
+    <div class="container">
+      <p>&copy; 2025 FitLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("fitlife_user"));
+
+    if (!user) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("userName").textContent = user.name;
+      document.getElementById("userGoal").textContent = user.goal.replace("_", " ");
+      document.getElementById("editName").value = user.name;
+      document.getElementById("editEmail").value = user.email;
+      document.getElementById("editGoal").value = user.goal;
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("fitlife_user");
+      window.location.href = "login.html";
+    });
+
+    document.getElementById("profileForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const updatedUser = {
+        name: document.getElementById("editName").value,
+        email: document.getElementById("editEmail").value,
+        goal: document.getElementById("editGoal").value
+      };
+      localStorage.setItem("fitlife_user", JSON.stringify(updatedUser));
+      location.reload();
+    });
+
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Workouts Completed',
+          data: [1, 0, 1, 1, 0, 1, 1],
+          backgroundColor: 'rgba(46, 204, 113, 0.2)',
+          borderColor: '#2ecc71',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
